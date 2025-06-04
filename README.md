@@ -196,7 +196,7 @@ GROUP BY shift;
 
 ## Conclusion
 
-This project serves as a comprehensive introduction to SQL for data analysts, covering database setup, data cleaning, exploratory data analysis, and business-driven SQL queries. The findings from this project can help drive business decisions by understanding sales patterns, customer behavior, and product performance.
+The Retail Sales Analysis project provided valuable insights into customer behavior, category performance, and monthly sales trends. Data cleaning improved data quality, while SQL queries revealed peak sales months, top-spending customers, and high-performing categories like Clothing and Beauty. These findings can help drive better marketing, inventory, and customer engagement strategies.
 
 
 
