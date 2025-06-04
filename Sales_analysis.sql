@@ -175,14 +175,17 @@ Group By category, gender;
 
 WITH monthly_avg_sales AS (
     SELECT 
-        EXTRACT(YEAR FROM sale_date) AS year,
-        EXTRACT(MONTH FROM sale_date) AS month,
+        YEAR(sale_date) AS year,
+        MONTH(sale_date) AS month,
         AVG(total_sale) AS avg_sale
     FROM retail_sales
     GROUP BY year, month
 ),
 ranked_months AS (
-    SELECT *,
+    SELECT 
+        year, 
+        month, 
+        avg_sale,
         RANK() OVER (PARTITION BY year ORDER BY avg_sale DESC) AS rank
     FROM monthly_avg_sales
 )
@@ -202,7 +205,7 @@ LIMIT 5;
 
 -- Q.9 Write a SQL query to find the number of unique customers who purchased items from each category.
 
-SELECT category, count(DISTINCT customer_id) as coustomer_count 
+SELECT category, count(DISTINCT customer_id) as customer_count 
 from retail_sales
 GROUP By category;
 
